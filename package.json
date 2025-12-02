@@ -1,0 +1,92 @@
+{
+    "name": "zendariom-games-launcher",
+    "preductname": "Zendariom Games Launcher",  
+    "version": "1.0.0",
+    "description": "Launcher Minecraft pour le serveur Selvania",
+    "main": "src/app.js",
+    "author": {
+        "name": "WW-DJY",
+        "email": "zendariom@gmail.com",
+        "url": "https://github.com/terrarpg"
+    },
+    "scripts": {
+        "start": "cross-env-shell NODE_ENV=dev electron .",
+        "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
+        "build": "node build.js --obf=true --build=platform",
+        "icon": "node build.js --icon=https://i.postimg.cc/59Ls6h3Y/logo.png"
+    },
+    "license": "CCANC",
+    "nodemonConfig": {
+        "ext": "js,html,css",
+        "ignore": "**/test"
+    },
+    "dependencies": {
+        "electron-updater": "^6.1.8",
+        "minecraft-java-core": "^4.1.4",
+        "node-bdd": "^2.0.4",
+        "node-fetch": "^2.7.0",
+        "xml-js": "^1.6.11"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "electron": "^30.5.1",
+        "electron-builder": "^26.0.12",
+        "javascript-obfuscator": "^4.1.0",
+        "jimp": "^0.22.12",
+        "nodemon": "^3.1.2",
+        "png2icons": "^2.0.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/terrarpg/Zendariom-Launcher-games.git"
+    },
+    
+    
+    "build": {
+        "appId": "com.zendariom.games.launcher",
+        "productName": "Zendariom Games Launcher",
+        "copyright": "Copyright © 2024 Zendariom Games",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "app/**/*",
+            "package.json",
+            "LICENSE.md"
+        ],
+        
+       
+        "publish": {
+            "provider": "github",
+            "owner": "terrarpg",
+            "repo": "Zendariom-Launcher-games",
+            "releaseType": "release"
+        },
+        
+        "win": {
+            "target": "nsis",
+            "icon": "build/icon.ico"
+        },
+        "nsis": {
+            "oneClick": true,
+            "allowToChangeInstallationDirectory": false,
+            "createDesktopShortcut": true,
+            "runAfterFinish": true
+        },
+        "mac": {
+            "target": "dmg",
+            "icon": "build/icon.icns",
+            "category": "public.app-category.games"
+        },
+        "dmg": {
+            "contents": [
+                { "x": 130, "y": 220 },
+                { "x": 410, "y": 220, "type": "link", "path": "/Applications" }
+            ]
+        },
+        "linux": {
+            "target": "AppImage",
+            "icon": "build/icon.png"
+        }
+    }
+}
