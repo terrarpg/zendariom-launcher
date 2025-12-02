@@ -48,3 +48,66 @@
     padding: 0.4rem 1rem;
     margin-top: 10px;
 }
+
+/* CSS ESSENTIEL pour les liens d'inscription */
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 14px;
+    width: 100%;
+}
+
+.register-link span {
+    color: var(--subtext-color);
+    margin-right: 5px;
+}
+
+.register-text {
+    color: var(--color);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.register-text:hover {
+    color: var(--color-hover);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .register-link {
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 13px;
+    }
+}
+
+/* Variables CSS minimales */
+:root {
+    --color: #0078d7;
+    --color-hover: #005a9e;
+    --text-color: #ffffff;
+    --subtext-color: #aaaaaa;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+    --color: #0078d7;
+    --color-hover: #005a9e;
+    --text-color: #000000;
+    --subtext-color: #666666;
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+    --color: #4dabf7;
+    --color-hover: #339af0;
+    --text-color: #ffffff;
+    --subtext-color: #aaaaaa;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
